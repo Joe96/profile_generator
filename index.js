@@ -28,6 +28,7 @@ inquirer.prompt([
     },
 ]).then (function (surveyResults){
 console.log(surveyResults)
+
 var html=`<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,6 +48,7 @@ var html=`<!DOCTYPE html>
 
 </body>
 </html>`
+
 fs.writeFile('index.html',html,function(err){
 if (err) {
     console.log(err)
