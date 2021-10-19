@@ -45,7 +45,7 @@ function addEmployees() {
         }
         inquirer.prompt([{
             message: `Enter ${employeeRole}`,
-            name: "roleInfo"
+            name: "employeeRole"
         },
         {
             type: "list",
@@ -54,21 +54,21 @@ function addEmployees() {
                 "yes",
                 "no"
             ],
-            name: "moreMembers"
+            name: "addedMember"
         }])
-        .then(function({roleInfo, moreMembers}) {
+        .then(function({employeeRole, addedMember}) {
             let newMember;
             if (role === "Engineer") {
-                newMember = new Engineer(name, id, email, roleInfo);
+                newMember = new Engineer(name, id, email, employeeRole);
             } else if (role === "Intern") {
-                newMember = new Intern(name, id, email, roleInfo);
+                newMember = new Intern(name, id, email, employeeRole);
             } else {
-                newMember = new Manager(name, id, email, roleInfo);
+                newMember = new Manager(name, id, email, employeeRole);
             }
             employees.push(newMember);
             addHtml(newMember)
             .then(function() {
-                if (moreMembers === "yes") {
+                if (addedMember === "yes") {
                     addEmployees();
                 } else {
                     finish();
