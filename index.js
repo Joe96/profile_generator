@@ -101,54 +101,55 @@ function renderHtml() {
 }
 
 function addHtml(member) {
-    const name = member.getName();
-    const role = member.getRole();
-    const id = member.getId();
-    const email = member.getEmail();
-    let data = "";
-    if (role === "Engineer") {
-        const gitHub = member.getGithub();
-        data = `<div class="col-6">
-        <div class="card mx-auto mb-3">
-        <h5 class="card-header">${name}<br /><br />Engineer</h5>
-        <ul class="list-group">
-            <li class="list-item">ID: ${id}</li>
-            <li class="list-item">Email Address: ${email}</li>
-            <li class="list-item">GitHub: ${gitHub}</li>
-        </ul>
-        </div>
-    </div>`;
-    } else if (role === "Intern") {
-        const school = member.getSchool();
-        data = `<div class="col-6">
-        <div class="card mx-auto mb-3">
-        <h5 class="card-header">${name}<br /><br />Intern</h5>
-        <ul class="list-group list-group-flush">
-            <li class="list-item">ID: ${id}</li>
-            <li class="list-item">Email Address: ${email}</li>
-            <li class="list-item">School: ${school}</li>
-        </ul>
-        </div>
-    </div>`;
-    } else {
-        const officePhone = member.getNumber();
-        data = `<div class="col-6">
-        <div class="card mx-auto mb-3">
-        <h5 class="card-header">${name}<br /><br />Manager</h5>
-        <ul class="list-group">
-            <li class="list-item">ID: ${id}</li>
-            <li class="list-item">Email Address: ${email}</li>
-            <li class="list-item">Office Phone: ${officePhone}</li>
-        </ul>
-        </div>
-    </div>`
-    }
-    console.log("adding member");
-    fs.appendFile("./dist/index.html", data, (err) => {
-        err ? console.log(err):console.log("Sucess");
+    return willAddMember = new Promise((resolve, reject) => {
+        const name = member.getName();
+        const role = member.getRole();
+        const id = member.getId();
+        const email = member.getEmail();
+        let data = "";
+        if (role === "Engineer") {
+            const gitHub = member.getGithub();
+            data = `<div class="col-6">
+            <div class="card mx-auto mb-3">
+            <h5 class="card-header">${name}<br /><br />Engineer</h5>
+            <ul class="list-group">
+                <li class="list-item">ID: ${id}</li>
+                <li class="list-item">Email Address: ${email}</li>
+                <li class="list-item">GitHub: ${gitHub}</li>
+            </ul>
+            </div>
+        </div>`;
+        } else if (role === "Intern") {
+            const school = member.getSchool();
+            data = `<div class="col-6">
+            <div class="card mx-auto mb-3">
+            <h5 class="card-header">${name}<br /><br />Intern</h5>
+            <ul class="list-group list-group-flush">
+                <li class="list-item">ID: ${id}</li>
+                <li class="list-item">Email Address: ${email}</li>
+                <li class="list-item">School: ${school}</li>
+            </ul>
+            </div>
+        </div>`;
+        } else {
+            const workNumber = member.getNumber();
+            data = `<div class="col-6">
+            <div class="card mx-auto mb-3">
+            <h5 class="card-header">${name}<br /><br />Manager</h5>
+            <ul class="list-group">
+                <li class="list-item">ID: ${id}</li>
+                <li class="list-item">Email Address: ${email}</li>
+                <li class="list-item">Office Phone: ${workNumber}</li>
+            </ul>
+            </div>
+        </div>`
+        }
+        console.log("adding member");
+        fs.appendFile("./dist/index.html", data, (err) => {
+            err ? reject(err):resolve();
+        });
+    
     });
-    
-    
 }
 
 function finish() {
