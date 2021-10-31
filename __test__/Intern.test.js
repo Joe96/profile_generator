@@ -19,7 +19,7 @@ describe('intern', () => {
     });
 
     it("Should return intern's school", () => {
-      expect(i.school()).toBe("Mason High School");
+      expect(i.getSchool()).toBe("Mason High School");
     });
 
     it("Should return entered role",()=> {
