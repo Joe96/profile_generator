@@ -1,7 +1,7 @@
 const Intern = require('../lib/Intern');
  
 describe('intern', () => {
-    const i = new Intern("Malcolm", 0003, "malcolm@little.com","Mason High School");
+    const i = new Intern("Malcolm", 4000, "malcolm@little.com","Mason High School");
     it("Should instantiate Employee object", () => {
         expect(typeof(i)).toBe("object");
     });
@@ -11,7 +11,7 @@ describe('intern', () => {
     });
 
     it("Should return entered id",()=> {
-        expect(i.getId()).toBe(0003);
+        expect(i.getId()).toBe(4000);
     });
 
     it("Should return entered email",()=> {

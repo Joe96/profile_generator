@@ -1,9 +1,8 @@
 const Employee = require('../lib/Employee');
  
 describe('employee', () => {
-    const employee = new Employee("Joel" , 0001, "joel@afamefune.com");
+    const e = new Employee("Joel" , 3000, "joel@afamefune.com");
     it("Should instantiate Employee object", () => {
-        const e = new Employee();
         expect(typeof(e)).toBe("object");
     });
 
@@ -12,7 +11,7 @@ describe('employee', () => {
     });
 
     it("Should return entered id",()=> {
-        expect(e.getId()).toBe(0001);
+        expect(e.getId()).toBe(3000);
     });
 
     it("Should return entered email",()=> {

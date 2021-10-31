@@ -18,8 +18,8 @@ describe('manager', () => {
         expect(m.getEmail()).toBe("muammar@green.com");
     });
 
-    it("Should return github username", () => {
-      expect(m.number()).toBe(5555555555);
+    it("Should return phone number", () => {
+      expect(m.getNumber()).toBe(5555555555);
     });
 
     it("Should return entered role",()=> {
