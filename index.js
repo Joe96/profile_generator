@@ -113,9 +113,9 @@ function addHtml(member) {
             <div class="card mx-auto mb-3">
             <h5 class="card-header">${name}<br /><br />Engineer</h5>
             <ul class="list-group">
-                <li class="list-item">ID: ${id}</li>
-                <li class="list-item">Email Address: ${email}</li>
-                <li class="list-item">GitHub: ${gitHub}</li>
+                <li class="list-item">ID:${id}</li>
+                <li class="list-item">Email Address:<a href="mailto:${email}">${email}</a></li>
+                <li class="list-item">GitHub:<a href="https://github.com/${gitHub}"</a>${gitHub}</li>
             </ul>
             </div>
         </div>`;
