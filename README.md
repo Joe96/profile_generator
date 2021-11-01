@@ -29,4 +29,4 @@ THEN I exit the application, and the HTML is generated
 ```
 
 ## Screen Record
-[Record]( https://watch.screencastify.com/v/flohxrBMIzKcaRbQ8DQN)
+[Record](https://watch.screencastify.com/v/KuIbjOKiFK6iAWntyABx)
